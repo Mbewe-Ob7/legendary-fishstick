@@ -1,1 +1,13 @@
 <h1>About Us</h1>
+<% if (teamMembers && Array.isArray(teamMembers)) { %> <!--checks if team members exist-->
+  <!-- loops through the array and displays their info -->
+    <% teamMembers.forEach(member => { %>
+    <div>
+      <h2><%= member.name %></h2>
+      <p>Role: <%= member.role %></p>
+      <p><%= member.bio %></p>
+    </div>
+  <% }); %>
+<% } else { %>
+  <p>No team members available.</p>
+<% } %>
