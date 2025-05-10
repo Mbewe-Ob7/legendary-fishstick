@@ -1,2 +1,15 @@
 <h1>Upcoming Events</h1>
 <p>Check out what's happening soon!</p>
+<% if (events && Array.isArray(events)) { %>  <!--checks if events exist-->
+  <!-- loops through array to display event info -->
+    <% events.forEach(event => { %>
+    <div>
+      <h2><%= event.title %></h2>
+      <p>Date: <%= event.date %></p>
+      <p>Location: <%= event.location %></p>
+      <img src="<%= event.image %>" alt="<%= event.title %>">
+    </div>
+  <% }); %>
+<% } else { %>
+  <p>No events available.</p>
+<% } %>
