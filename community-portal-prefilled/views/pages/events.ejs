@@ -1,15 +1,29 @@
-<h1>Upcoming Events</h1>
-<p>Check out what's happening soon!</p>
-<% if (events && Array.isArray(events)) { %>  <!--checks if events exist-->
-  <!-- loops through array to display event info -->
-    <% events.forEach(event => { %>
-    <div>
-      <h2><%= event.title %></h2>
-      <p>Date: <%= event.date %></p>
-      <p>Location: <%= event.location %></p>
-      <img src="<%= event.image %>" alt="<%= event.title %>">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upcoming Events</title>
+  <link rel="stylesheet" href="/style.css">
+  
+   
+  
+</head>
+<body>
+
+  <section class="events-section">
+    <h2>Upcoming Events</h2>
+    <div class="grid">
+      <% events.forEach(event => { %>
+        <div class="card">
+          <img src="<%= event.image %>" alt="<%= event.title %>">
+          <h3><%= event.title %></h3>
+          <small><%= event.date %> &bull; <%= event.location %></small>
+          <p>Join us at the <%= event.title %> hosted at <%= event.location %>. Don’t miss out!</p>
+        </div>
+      <% }) %>
     </div>
-  <% }); %>
-<% } else { %>
-  <p>No events available.</p>
-<% } %>
+  </section>
+
+</body>
+</html>
