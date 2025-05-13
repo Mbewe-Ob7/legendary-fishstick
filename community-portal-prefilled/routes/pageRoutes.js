@@ -4,12 +4,16 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.send("hello world")
+
+   
+    res.render('pages/home')
 });
 
 router.get('/about', (req, res) => {
     const data = { teamMembers: req.teamMembers };
-    res.send("hello about")
+
+    res.render('pages/about', data);
+   
 });
 
 router.get('/events', (req, res) => {
@@ -23,13 +27,17 @@ router.get('/contact', (req, res) => {
     if (name && email && message) {
         req.contactSubmissions.push({ name, email, message });     
     }
-     res.send("hello contact")
+
+      res.render('pages/contact');
+
 });
 
 router.get('/thankyou', (req, res) => {
     const lastSubmission = req.contactSubmissions[req.contactSubmissions.length - 1];
     const data = { name: lastSubmission?.name || 'Guest' };
-    res.send("hello thanks")
+
+    res.render('pages/thankyou');
+
 });
 
 module.exports = router;
