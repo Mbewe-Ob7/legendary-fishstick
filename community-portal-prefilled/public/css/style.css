@@ -1,7 +1,7 @@
  body {
       font-family: Arial, sans-serif;
       background-color: #0a0a4f;
-      color: #fff;
+      color: #fff;    
       margin: 0;
       padding: 0;
     }
@@ -251,3 +251,26 @@
       color: #ccc;
       font-size: 0.95rem;
     }
+.simple-footer {
+  background-color: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.social-icons {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #aaa;
+  margin: 0 10px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
