@@ -38,17 +38,15 @@ const events = [
   { title: "Cybersecurity Workshop", date: "2025-10-30", location: "Innovation Lab", image: "/images/cybersecurity.png" },
   { title: "Rock Music Festival", date: "2025-10-31", location: "Town Square", image: "/images/rockmf.png" }
 ];
-
+//array that will store contact submissions
 let contactSubmissions = [];
-
-//console.log('app.js - teamMembers defined:', teamMembers);//for debugging
 
 // middleware to attach data to req
 app.use((req, res, next) => {
   req.teamMembers = teamMembers;
   req.events = events;
   req.contactSubmissions = contactSubmissions;
-  console.log('app.js - Middleware setting req.teamMembers:', req.teamMembers); //for debugging
+  //console.log('app.js - Middleware setting req.teamMembers:', req.teamMembers); //for debugging
   next();
 });
 

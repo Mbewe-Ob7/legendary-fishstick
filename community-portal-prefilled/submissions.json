@@ -1,7 +1,20 @@
 [
   {
-    "name": "Tarina",
-    "email": "ts@gmail.com",
-    "message": "I would like to know more about the game dev event"
+    "firstName": "Eugene",
+    "lastName": "Williams",
+    "email": "ew@gmail.com",
+    "message": "Are there any gaming events?"
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "email": "jd@gmail.com",
+    "message": "I am intereseted  in the photography event. Please give me more info about it"
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Millard",
+    "email": "jm@gmail.com",
+    "message": "Hi please sign me up for the code bootcamp"
   }
 ]
