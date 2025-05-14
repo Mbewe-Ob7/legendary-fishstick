@@ -23,8 +23,18 @@ The goal is to create a responsive header with a gradient background, a logo, na
     css/style.css: The stylesheet containing the header design.
 3. Run the Application: Open index.html directly in a web browser by double-clicking the file or using a local server.
 
-## Liscense 
-This is free to use and requires no Liscense, feel free to use, modify, and distribute it
+## Team members
+1. Kutlwano Thaga: Frontend
+2. Darius Greef: Backend
+3. Tarina Snyman: Datamanagement
+4. Oarabile Mbewe: Team Lead and documentation
+
+## Technologies used
+HTML5
+CSS3
+JavaScript
+EJS 
+Node.js and Express
 
 
 
