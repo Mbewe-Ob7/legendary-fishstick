@@ -1,13 +1,32 @@
-<h1>About Us</h1>
-<% if (teamMembers && Array.isArray(teamMembers)) { %> <!--checks if team members exist-->
-  <!-- loops through the array and displays their info -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meet Our Team</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+  <section class="about">
+    <h1>Meet Our Team</h1>
+    <p>Get to know the people who make our community thrive.</p>
+  </section>
+
+  <section class="about-container">
     <% teamMembers.forEach(member => { %>
-    <div>
-      <h2><%= member.name %></h2>
-      <p>Role: <%= member.role %></p>
-      <p><%= member.bio %></p>
-    </div>
-  <% }); %>
-<% } else { %>
-  <p>No team members available.</p>
-<% } %>
+      <div class="about-card">
+        <h3><%= member.name %></h3>
+        <small><%= member.role %></small>
+        <p><%= member.bio %></p>
+      </div>
+    <% }) %>
+  </section>
+<%- include('../partials/footer') %>
+</body>
+</html>
+
+
