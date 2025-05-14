@@ -21,30 +21,42 @@ router.get('/events', (req, res) => {
 });
 
 router.get('/contact', (req, res) => {
-    //stores valid submission
-    const { name, email, message } = req.body;
-    if (name && email && message) {
-        req.contactSubmissions.push({ name, email, message });     
-    }
-
-      res.render('pages/contact');
+    res.render('pages/contact',{ error: null });
 
 });
 // POST /contact
 router.post('/contact', (req, res) => {
-    const { name, email, message } = req.body;
-    if (name && email && message) {
-        const submission = { name, email, message };
-        req.contactSubmissions.push(submission);
+    const { firstName, lastName, email, message } = req.body;
+    if (firstName && lastName && email && message) {
+        const submission = { firstName, lastName, email, message };
+        req.contactSubmissions.push(submission);//stores submission info in array 
+        console.log('req.contactSubmissions after push:', req.contactSubmissions);
 
-        // write to aJSON file
-        fs.writeFile('submissions.json', JSON.stringify(req.contactSubmissions, null, 2), (err) => {
-            if (err) {
-                console.error('Error writing to JSON file:', err);
-            }
-        });
+        const filePath = 'submissions.json';
+    // reads the existing contents of the JSON file
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        let submissions = [];
 
-        res.redirect('/thankyou');
+        if (!err && data) {
+         try {
+            submissions = JSON.parse(data); // convert th json string to array
+         } catch (parseErr) {
+            console.error('Error parsing existing JSON:', parseErr);
+         }
+        }
+
+    submissions.push(submission);//add the new submission to the array
+        //write t he updated array to the json file
+    fs.writeFile(filePath, JSON.stringify(submissions, null, 2), (writeErr) => {
+        if (writeErr) {
+            console.error('Error writing to JSON file:', writeErr);
+        } else {
+            console.log('Successfully added to submissions.json');
+        }
+    });
+});
+
+        res.redirect('/thankyou');//redirects to thank you page
     } else {
         res.render('pages/contact', { error: 'All fields are required' });
     }
@@ -52,9 +64,8 @@ router.post('/contact', (req, res) => {
 
 router.get('/thankyou', (req, res) => {
     const lastSubmission = req.contactSubmissions[req.contactSubmissions.length - 1];
-    const data = { name: lastSubmission?.name || 'Guest' };
-
-    res.render('pages/thankyou',data);
+    const displayName = lastSubmission.firstName ? lastSubmission.firstName : (lastSubmission.name || 'Guest');
+    res.render('pages/thankyou', { name: displayName });
 
 });
 

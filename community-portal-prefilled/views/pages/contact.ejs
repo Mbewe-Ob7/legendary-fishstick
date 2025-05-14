@@ -19,13 +19,13 @@
         <p>Let us know how we can support you. Our community is here to listen and help.</p>
       </div>
       <div class="contact-right">
-        <form>
+        <form method="POST" action="/contact">
           <div style="display: flex; gap: 10px;">
-            <input type="text" placeholder="First Name *" required style="flex:1;">
-            <input type="text" placeholder="Last Name *" required style="flex:1;">
+            <input type="text" name="firstName" placeholder="First Name *" required style="flex:1;">
+            <input type="text" name="lastName" placeholder="Last Name *" required style="flex:1;">
           </div>
-          <input type="email" placeholder="Email *" required />
-          <textarea rows="4" placeholder="Leave us a message..."></textarea>
+          <input type="email" name="email" placeholder="Email *" required />
+          <textarea name="message" rows="4" placeholder="Leave us a message..."></textarea>
           <button type="submit" class="btn-submit">Submit</button>
         </form>
       </div>
