@@ -274,3 +274,47 @@
 .social-icons a:hover {
   color: #fff;
 }
+
+/*Thank you page */
+ .thankyou {
+      background: 
+        linear-gradient(rgba(10, 10, 79, 0.8), rgba(10, 10, 79, 0.8)), 
+        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');
+      background-size: auto;
+      background-position: center;
+      color: white;
+      padding: 100px 20px;
+      height: 500px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .thankyou h1 {
+      margin-bottom: 20px;
+      font-size: 48px;
+    }
+
+    .thankyou p {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .button-container {
+      text-align: right;
+      padding: 20px;
+    }
+
+  
+
+    .btn-secondary {
+      background-color: #c9a9f7;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-secondary:hover {
+      background-color: #b08be5;
+    }

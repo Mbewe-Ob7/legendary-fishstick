@@ -10,9 +10,15 @@
 <body>
 
     <%- include('../partials/header') %>
-
+<div class="thankyou">
     <h1>Thank You, <%= name %>!</h1>
     <p>We’ve received your message and will get back to you soon.</p>
+ </div>
+  
+     <div class="button-container">
+   <a href="/home.ejs"><button class="btn btn-secondary">Next</button></a>
+
+  </div>
 
     <%- include('../partials/footer') %>
 </body>
